@@ -1,0 +1,46 @@
+h1{
+    font-size: 50px;
+        line-height: 140px;
+        margin: 0 0 0 32.5px;
+}
+header{
+    height: 150px;
+    background-color: #ffffff;
+    margin: 0px 50px 0px 50px;
+}
+header img{
+    width: 100px;
+    right: 100px;
+    top: 50px;
+    float: right;
+    position: absolute;
+}
+iframe{
+    float: left;
+    max-width: 100%;
+}
+article{
+    padding: 20px;
+    height: 320px;
+}
+.logos{
+    width: 290px;
+    padding-top: 20px;
+}
+
+#v_section{
+    background-color: rgb(190, 183, 183);
+}
+#logo_section{
+    height: auto;
+    background-color: rgb(243, 77, 77);
+}
+#lst_section{
+    padding: 0px;
+}
+main{
+    margin: 0px 50px 0px 50px;
+}
+body{
+    background-image: url(../assets/pattern.png);
+}
