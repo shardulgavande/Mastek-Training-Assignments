@@ -1,0 +1,45 @@
+#header{
+    border: 2px solid black;
+    text-align: center;
+    color: black;
+    background-color: #0dcaf0;
+}
+#body{
+    border: 2px solid black;
+    margin-top: 10px;
+    border-radius: 25px;
+    height: 100vh;
+    background-color: #20c997;
+}
+#body-content{
+    margin-left: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: inline-block;
+}
+.divcontent{
+    display: table-row;
+}
+label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+}
+label {
+    padding-right: 10px;
+}
+
+#footer-content{
+
+        text-align: center;
+}
+#footer{
+    border: 2px solid black;
+    margin-top: 10px;
+    background-color: #6c757d;
+}
+#btn_add{
+    width: 100px;
+    height: 25px;
+    margin-top: 20px;
+    margin-left: 200px;
+}

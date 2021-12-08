@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+		<header id="header">
+			<h1>Scrap Book</h1>
+		</header>
+		
+		<div id="body">
+			<div id="body-content">
+			<div class="divcontent">
+			<label>First Name</label>
+			<input type="text" placeholder="Enter your first name" style="width: 300px; height: 20px;"/></br>
+			</div>
+			<div class="divcontent">
+			<label>Second Name</label>
+			<input type="text" placeholder="Enter your second name" style="width: 300px; height: 20px; margin-top: 10px;"/></br>
+			</div>
+			<div class="divcontent">
+			<label>Date of Birth</label>
+			<input type="date" placeholder="Enter your dob" style="width: 300px; height: 20px; margin-top: 10px;"/></br>
+			</div>
+			<div class="divcontent">
+			<label for="hobbies">Select your hobbies</label>
+			<input list="myhobbies" name="myhobbies" id="hobbies" style="width: 300px; height: 20px; margin-top: 10px;">
+			<datalist id="myhobbies">
+					<option value="Table Tennis"></option>	
+					<option value="Cricket"></option>
+					<option value="Carrom"></option>
+					<option value="Football"></option>	
+			</datalist></br>
+			</div>
+			<input type="button" value="Add" id="btn_add"/>
+				
+			</div>
+		</div>
+
+		<footer id="footer">
+			<p id="footer-content">Mastek @ Nov'21</p>
+		</footer>
+		<script src="js/app.js"></script>
+</body>
+</html>
+
