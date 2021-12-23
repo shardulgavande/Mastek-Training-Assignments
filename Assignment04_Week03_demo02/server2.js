@@ -1,16 +1,17 @@
 const express=require('express');
 const app=express();
 
-var bodyParser = require('body-parser');  
-var urlencodedParser = bodyParser.urlencoded({ extended: false })  
-
+// var bodyParser = require('body-parser');  
+// var urlencodedParser = bodyParser.urlencoded({ extended: false })  
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
 const port =3000;
 
 app.get('/',(req,resp)=>{
     resp.sendFile(__dirname+"/index1.html");
 })
 
-app.post('/register',urlencodedParser,(req,resp) => {
+app.post('/register',(req,resp) => {
     
     response = {
         fname: req.body.first_name,
