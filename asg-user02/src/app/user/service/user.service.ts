@@ -5,7 +5,7 @@ import { IUser } from '../IUser';
 
 @Injectable({
   providedIn: 'root'
-})
+})  
 export class UserService {
   private base_url = "http://localhost:3000";
   http_option = {

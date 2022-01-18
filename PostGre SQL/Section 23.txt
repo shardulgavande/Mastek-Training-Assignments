@@ -1,0 +1,77 @@
+Section 23:
+
+CREATE TYPE address AS (
+	street_address 	varchar(50),
+	street_address2 varchar(50),
+	city			varchar(50),
+	state_region	varchar(50),
+	country			varchar(50),
+	postalcode		varchar(15)
+);
+
+CREATE TYPE full_name AS(
+	first_name varchar(50),
+	middle_name varchar(50),
+	last_name varchar(50)
+);
+
+CREATE TABLE friends(
+	name full_name,
+	address address
+);
+
+DROP TYPE address CASCADE;
+DROP TYPE full_name CASCADE;
+DROP TABLE friends;
+
+INSERT INTO friends (name, address, specialdates)
+VALUES (ROW('Boyd','M','Gregory'),ROW('7777','','Boise','Idaho','USA','99999'),ROW('1969-02-01',49,'2001-07-15'));
+
+SELECT * FROM friends;
+SELECT name FROM friends;
+
+SELECT (address).city,(specialdates).birthdate
+FROM friends;
+
+SELECT name FROM friends
+WHERE (name).first_name = 'Boyd';
+
+SELECT (address).state_region,(name).middle_name,(specialdates).age FROM friends
+WHERE (name).last_name = 'Gregory';
+
+Section 24:
+CREATE or REPLACE FUNCTION set_employee_default_photo() RETURNS void AS $$
+	UPDATE employees
+	SET photopath = 'http://accweb/employees/default.bmp'
+	WHERE photopath IS NULL;
+$$ LANGUAGE SQL
+
+CREATE or REPLACE FUNCTION set_employee_default_photo() RETURNS void AS $$
+	UPDATE employees
+	SET photopath = 'http://accweb/employees/default.bmp'
+	WHERE photopath IS NULL;
+$$ LANGUAGE SQL
+
+CREATE OR REPLACE FUNCTION biggest_order() RETURNS double precision AS $$
+	SELECT MAX(amount)FROM
+	(SELECT SUM(unitprice*quantity) as amount, orderid
+	FROM order_details
+	GROUP BY orderid) as totals
+
+$$ LANGUAGE SQL
+
+CREATE OR REPLACE FUNCTION most_ordered_product(customerid bpchar) RETURNS varchar(40) AS $$
+	SELECT productname
+	FROM products
+	WHERE productid IN
+	(SELECT productid FROM
+	(SELECT SUM(quantity) as total_ordered, productid
+	FROM order_details
+	NATURAL JOIN orders
+	WHERE customerid= $1
+	GROUP BY productid
+	ORDER BY total_ordered DESC
+	LIMIT 1) as ordered_products);
+
+$$ LANGUAGE SQL;
+
