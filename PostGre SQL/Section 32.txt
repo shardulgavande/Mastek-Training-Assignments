@@ -1,0 +1,3 @@
+--Copy Data using Postgre Sql Terminal
+\COPY customers TO 'C:\Users\Shardul15288\Downloads\customers.txt'
+
